@@ -1,0 +1,68 @@
+# SQL Basic Queries Repository
+
+## 📌 Overview
+
+This repository contains basic SQL queries that I have practiced and implemented while learning SQL.
+It includes fundamental concepts like DDL, DML, table creation, and advanced basics like CTAS and temporary tables.
+
+---
+
+## 📂 Files Included
+
+### 1. Sql_basic_queries_01.sql
+
+* Basic SQL queries
+* DDL (Data Definition Language)
+
+  * CREATE
+  * ALTER
+  * DROP
+* DML (Data Manipulation Language)
+
+  * INSERT
+  * UPDATE
+  * DELETE
+* Simple SELECT queries
+
+### 2. Sql_basic_queries_02(tables).sql
+
+* Table-related queries
+* Creating tables with constraints
+* CTAS (Create Table As Select)
+* Temporary Tables
+
+---
+
+## 🧠 Concepts Covered
+
+* DDL Commands
+* DML Commands
+* Table Creation
+* Data Insertion & Modification
+* CTAS (Create Table from existing data)
+* Temporary Tables (session-based tables)
+
+---
+
+## 🚀 Purpose
+
+This repository is created for:
+
+* Practicing SQL basics
+* Strengthening database concepts
+* Preparing for Data Analyst roles
+
+---
+
+## 🛠 Tools Used
+
+* MySQL Workbench
+* GitHub
+
+---
+
+## 👤 Author
+
+Arulprasath.D
+
+---
