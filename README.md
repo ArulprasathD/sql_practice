@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 This repository contains basic SQL queries that I have practiced and implemented while learning SQL.
-It includes fundamental concepts like DDL, DML, table creation, and advanced basics like CTAS and temporary tables.
+It includes fundamental concepts like DDL, DML, table creation, and intermediate concepts like CTAS, temporary tables, and joins.
 
 ---
 
@@ -30,6 +30,22 @@ It includes fundamental concepts like DDL, DML, table creation, and advanced bas
 * Creating tables with constraints
 * CTAS (Create Table As Select)
 * Temporary Tables
+* CTE (Common Table Expression)
+
+### 3. Sql_basic_queries_03(alter).sql
+
+* ALTER operations
+* Modifying table structure
+* Adding / Dropping columns
+
+### 4. Sql_basic_queries_04(task).sql
+
+* SQL practice tasks
+* Joins implementation:
+
+  * INNER JOIN
+  * LEFT JOIN
+  * RIGHT JOIN
 
 ---
 
@@ -41,6 +57,8 @@ It includes fundamental concepts like DDL, DML, table creation, and advanced bas
 * Data Insertion & Modification
 * CTAS (Create Table from existing data)
 * Temporary Tables (session-based tables)
+* CTE (Common Table Expressions)
+* Joins (INNER, LEFT, RIGHT)
 
 ---
 
