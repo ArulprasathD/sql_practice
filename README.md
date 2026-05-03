@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 This repository contains basic SQL queries that I have practiced and implemented while learning SQL.
-It includes fundamental concepts like DDL, DML, table creation, and intermediate concepts like CTAS, temporary tables, and joins.
+It includes fundamental concepts like DDL, DML, table creation, and intermediate concepts like CTAS, temporary tables, joins, and filtering/sorting queries.
 
 ---
 
@@ -47,6 +47,13 @@ It includes fundamental concepts like DDL, DML, table creation, and intermediate
   * LEFT JOIN
   * RIGHT JOIN
 
+### 5. Sql_basic_queries_05(conditions).sql
+
+* Filtering and sorting queries
+* WHERE condition
+* ORDER BY clause
+* DESCRIBE / DESC command
+
 ---
 
 ## 🧠 Concepts Covered
@@ -59,6 +66,9 @@ It includes fundamental concepts like DDL, DML, table creation, and intermediate
 * Temporary Tables (session-based tables)
 * CTE (Common Table Expressions)
 * Joins (INNER, LEFT, RIGHT)
+* WHERE condition (filtering data)
+* ORDER BY (sorting results)
+* DESCRIBE / DESC (table structure view)
 
 ---
 
