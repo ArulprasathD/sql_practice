@@ -150,3 +150,63 @@ VALUE
 
 
 SELECT *FROM TRIP3;
+
+
+
+-- FOREIGN KEY
+
+USE UBER;
+
+DROP TABLE IF exists RIDE;
+create table drivers (
+ driver_id int primary key,
+ driver_name varchar (100),
+ license_number varchar (50) unique
+);
+
+
+create table ride(
+  rider_id int primary key,
+  driver_id int,
+  pickup_location varchar (100),
+  dropoff_location varchar (100),
+  foreign key(driver_id) references drivers (driver_id)
+);
+
+
+INSERT INTO  DRIVERS (DRIVER_ID,DRIVER_NAME,LICENSE_NUMBER)
+VALUE 
+(101,'AAA','XYZ123'),
+(102,'BBB','ABCDEF');
+
+INSERT INTO RIDE (RIDER_ID,DRIVER_ID,PICKUP_LOCATION,DROPOFF_LOCATION)
+VALUES
+(1,101,'VELACHERRY','CROMPET'),
+(2,101,'TAMBARAM','VILLIVAKAM'),
+(3,102,'SINGAPERMALKOVIL','SAIDAPET');
+
+
+SELECT *FROM DRIVERS;
+
+SELECT *FROM RIDE;
+
+INSERT INTO RIDE (RIDER_ID,DRIVER_ID,PICKUP_LOCATION,DROPOFF_LOCATION)
+VALUES
+(4,103,'VELACHERRY','CROMPET');                 -- Cannot add or update a child row: a foreign key constraint fails (`uber`.`ride`, CONSTRAINT `ride_ibfk_1` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`driver_id`))	0.016 sec
+                                                -- ILLATHA FOREIGN KEY INSERT AAGATHU
+                                                
+                                                
+                                                
+DELETE FROM DRIVERS WHERE DRIVER_ID = 101;			-- ITHU FORIEGN KEY AH IRRUKURATHU NALA ITHA DELETE AAGATHU LINK TABLE LA DELETE PANNA ITHULA PANNALAM			
+
+
+DELETE FROM RIDE WHERE DRIVER_ID = 101;					
+
+DELETE FROM RIDE WHERE DRIVER_ID = 102;	
+
+DELETE FROM DRIVERS WHERE DRIVER_ID = 102;	
+
+
+TRUNCATE TABLE RIDE;
+
+TRUNCATE TABLE DRIVERS;
