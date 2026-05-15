@@ -210,3 +210,47 @@ DELETE FROM DRIVERS WHERE DRIVER_ID = 102;
 TRUNCATE TABLE RIDE;
 
 TRUNCATE TABLE DRIVERS;
+
+
+-- ON DELETE CASCADE
+DROP TABLE IF EXISTS DRIVERS1;
+DROP TABLE IF EXISTS RIDE1;
+create table drivers1 (
+ driver_id int primary key,
+ driver_name varchar (100),
+ license_number varchar (50) unique
+);
+
+
+create table ride1(
+  rider_id int primary key,
+  driver_id int,
+  pickup_location varchar (100),
+  dropoff_location varchar (100),
+  foreign key(driver_id) references drivers1 (driver_id)ON DELETE CASCADE        -- DELETE in parent table = related rows delete in child table
+);
+
+INSERT INTO  DRIVERS1 (DRIVER_ID,DRIVER_NAME,LICENSE_NUMBER)
+VALUE 
+(101,'AAA','XYZ123'),
+(102,'BBB','ABCDEF');
+
+
+INSERT INTO RIDE1 (RIDER_ID,DRIVER_ID,PICKUP_LOCATION,DROPOFF_LOCATION)
+VALUES
+(1,101,'VELACHERRY','CROMPET'),
+(2,101,'TAMBARAM','VILLIVAKAM'),
+(3,102,'SINGAPERMALKOVIL','SAIDAPET');
+
+
+SELECT *FROM DRIVERS1;
+
+SELECT *FROM RIDE1;
+
+                                                            -- ON DELETE CASCADE:
+                                                            -- Parent table row delete panna,
+                                                            -- related child table rows automatic ah delete aagum.
+
+
+DELETE FROM DRIVERS1 WHERE DRIVER_ID = 101;    
+
