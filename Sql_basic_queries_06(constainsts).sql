@@ -213,6 +213,8 @@ TRUNCATE TABLE DRIVERS;
 
 
 -- ON DELETE CASCADE
+
+
 DROP TABLE IF EXISTS DRIVERS1;
 DROP TABLE IF EXISTS RIDE1;
 create table drivers1 (
@@ -254,3 +256,46 @@ SELECT *FROM RIDE1;
 
 DELETE FROM DRIVERS1 WHERE DRIVER_ID = 101;    
 
+-- soft delete example
+
+create table drivers2 (
+ driver_id int primary key,
+ driver_name varchar (100),
+ license_number varchar (50) unique
+);
+
+
+create table ride2(
+  rider_id int primary key,
+  driver_id int,
+  pickup_location varchar (100),
+  dropoff_location varchar (100),
+  foreign key(driver_id) references drivers2 (driver_id)
+);
+
+
+INSERT INTO  DRIVERS2 (DRIVER_ID,DRIVER_NAME,LICENSE_NUMBER)
+VALUE 
+(101,'AAA','XYZ123'),
+(102,'BBB','ABCDEF');
+
+INSERT INTO RIDE2 (RIDER_ID,DRIVER_ID,PICKUP_LOCATION,DROPOFF_LOCATION)
+VALUES
+(1,101,'VELACHERRY','CROMPET'),
+(2,101,'TAMBARAM','VILLIVAKAM'),
+(3,102,'SINGAPERMALKOVIL','SAIDAPET');
+
+
+SELECT *FROM DRIVERS2;
+
+SELECT *FROM RIDE2;
+
+
+ALTER TABLE RIDE2 ADD COLUMN IS_DELETE BOOLEAN DEFAULT FALSE;
+
+ALTER TABLE RIDE2
+RENAME COLUMN IS_DELETE TO is_delete;
+
+UPDATE RIDE2 SET IS_DELETE = TRUE where DRIVER_ID = 102;
+
+UPDATE RIDE2 SET IS_DELETE = FALSE WHERE DRIVER_ID = 101;
