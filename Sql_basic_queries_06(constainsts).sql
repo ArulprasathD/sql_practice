@@ -304,3 +304,7 @@ UPDATE RIDE2 SET IS_DELETE = FALSE WHERE DRIVER_ID = 101;
 
 
 -- minimal key
+-- surrogate key
+-- natural key
+-- candidate key
+-- super key 
