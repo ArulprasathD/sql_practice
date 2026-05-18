@@ -40,12 +40,17 @@ SELECT COUNT(*) FROM CUSTOMER_TRANSATIONS WHERE transaction_status = 'Cancelled'
 SELECT COUNT(*) FROM CUSTOMER_TRANSATIONS WHERE transaction_status = 'COMPLETED' AND product = 'Laptop';
 
 
-select count(*) from CUSTOMER_TRANSATIONS where transaction_status in ( 'Pending','Processing');
+select count(*) from CUSTOMER_TRANSATIONS where transaction_status in ('Pending','Processing');
 
-select count(*) from CUSTOMER_TRANSATIONS where transaction_status not in ( 'Pending','Processing');
+select count(*) from CUSTOMER_TRANSATIONS where transaction_status not in ('Pending','Processing');
 
 -- DISTINCT
 
 SELECT DISTINCT login_device
 FROM CUSTOMER_TRANSATIONS;
 
+-- SUM
+
+SELECT SUM(AMOUNT) FROM CUSTOMER_TRANSATIONS ;
+
+SELECT SUM(AMOUNT) AS TOTAL_TRANSACTION FROM CUSTOMER_TRANSATIONS WHERE TRANSACTION_STATUS = 'COMPLETED';
