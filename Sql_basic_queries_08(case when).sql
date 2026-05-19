@@ -50,3 +50,6 @@ customer_name,
 	end as contact
     from customers;
     
+    
+select * from customers limit 3;               -- LIMIT is used to display records within a given range and reduce the amount of data retrieved from the database. 
+    
