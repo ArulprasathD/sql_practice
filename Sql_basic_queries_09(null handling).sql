@@ -2,6 +2,7 @@
 
 use market_data;
 
+
 CREATE TABLE CustomerData (
     id INT PRIMARY KEY,
     customer_name VARCHAR(50),
@@ -48,8 +49,8 @@ select                                             -- COALESCE IS USED TO HANDLE
      id,
      customer_name,
      amount,
-     coalesce (amount,'0.00')
-from customerdata;
+     coalesce (amount,'0.00') as updated
+from customerdata ;
 
 -- IF NULL
 
@@ -57,7 +58,7 @@ select
      id,
      customer_name,
      amount,
-     ifnull(amount,'0.00')
+     ifnull(amount,'0.00') as updated
 from customerdata;
 
 
